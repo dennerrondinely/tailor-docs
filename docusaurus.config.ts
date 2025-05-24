@@ -12,7 +12,7 @@ const config: Config = {
   // Set the production url of your site here
   url: 'https://dennerrondinely.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
-  baseUrl: '/tailor-docs/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   organizationName: 'dennerrondinely',
