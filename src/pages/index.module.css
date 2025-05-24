@@ -8,35 +8,35 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-color: #2A2D34;
-  color: #E8E8E8;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
 }
 
 .heroTitle {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #E8E8E8;
+  color: var(--ifm-font-color-base);
 }
 
 .heroSubtitle {
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  color: #95E1D3;
+  color: var(--ifm-color-primary);
 }
 
 .heroButton {
-  background-color: #FF6B6B;
-  color: #E8E8E8;
+  background: var(--ifm-color-primary);
+  color: var(--ifm-font-color-base);
   border: none;
   padding: 0.8rem 1.5rem;
   font-size: 1.1rem;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background 0.2s;
 }
 
 .heroButton:hover {
-  background-color: #FF5252;
+  background: var(--ifm-color-primary-dark);
 }
 
 .features {
@@ -44,7 +44,7 @@
   align-items: center;
   padding: 2rem 0;
   width: 100%;
-  background-color: #1E2024;
+  background: var(--ifm-background-surface-color, var(--ifm-background-color));
 }
 
 .featureImage {
@@ -55,24 +55,24 @@
 .featureHeading {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #4ECDC4;
+  color: var(--ifm-color-primary);
 }
 
 .featureText {
   font-size: 1.1rem;
-  color: #E8E8E8;
+  color: var(--ifm-font-color-base);
 }
 
 .benefits {
   padding: 4rem 0;
-  background-color: #2A2D34;
+  background: var(--ifm-background-color);
 }
 
 .benefitsTitle {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #E8E8E8;
+  color: var(--ifm-font-color-base);
 }
 
 .benefitsGrid {
@@ -83,7 +83,7 @@
 }
 
 .benefitCard {
-  background-color: #1E2024;
+  background: var(--ifm-background-surface-color, var(--ifm-background-color));
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -92,58 +92,58 @@
 .benefitTitle {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #FF6B6B;
+  color: var(--ifm-color-primary);
 }
 
 .benefitDescription {
-  color: #E8E8E8;
+  color: var(--ifm-font-color-base);
   line-height: 1.6;
 }
 
 .gettingStarted {
   padding: 4rem 0;
-  background-color: #1E2024;
+  background: var(--ifm-background-surface-color, var(--ifm-background-color));
   text-align: center;
 }
 
 .gettingStartedTitle {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #E8E8E8;
+  color: var(--ifm-font-color-base);
 }
 
 .gettingStartedText {
   font-size: 1.2rem;
-  color: #95E1D3;
+  color: var(--ifm-color-primary);
   max-width: 800px;
   margin: 0 auto 2rem;
 }
 
 .codeBlock {
-  background-color: #2A2D34;
+  background: var(--ifm-background-color);
   padding: 2rem;
   border-radius: 8px;
   margin: 2rem auto;
   max-width: 800px;
   text-align: left;
   font-family: 'Fira Code', monospace;
-  color: #E8E8E8;
+  color: var(--ifm-font-color-base);
 }
 
 .codeBlock pre {
   margin: 0;
   padding: 1rem;
-  background-color: #1E2024;
+  background: var(--ifm-background-surface-color, var(--ifm-background-color));
   border-radius: 4px;
   overflow-x: auto;
 }
 
 .codeBlock code {
-  color: #E8E8E8;
+  color: var(--ifm-font-color-base);
 }
 
 .codeBlock .keyword {
-  color: #FF6B6B;
+  color: var(--ifm-color-primary);
 }
 
 .codeBlock .string {
