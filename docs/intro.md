@@ -2,46 +2,79 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Tailor is a powerful library for creating styled React components with Tailwind CSS in an organized and typed way. It provides a simple and intuitive API for managing component styles, variants, and responsive design while maintaining full TypeScript support.
 
-## Getting Started
+## Features
 
-Get started by **creating a new site**.
+- 🎨 **Type-safe styling** with TypeScript
+- 🎯 **Smart class merging** for efficient style management
+- 📱 **Responsive design** support out of the box
+- 🎭 **Dynamic class generation** based on props
+- 🎪 **Nested styles** for complex components
+- 🎬 **Animation support** for interactive components
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
+## Installation
 
 ```bash
-npm init docusaurus@latest my-website classic
+npm install @dennerrondinely/tailor
+# or
+yarn add @dennerrondinely/tailor
+# or
+pnpm add @dennerrondinely/tailor
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+## Quick Start
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+Here's a simple example of how to use Tailor to create a styled button component:
 
-## Start your site
+```tsx
+import { craft } from '@dennerrondinely/tailor';
 
-Run the development server:
+interface ButtonProps {
+  isActive?: boolean;
+  disabled?: boolean;
+  children: React.ReactNode;
+}
 
-```bash
-cd my-website
-npm run start
+const Button: React.FC<ButtonProps> = ({ children, ...props }) => (
+  <button {...props}>{children}</button>
+);
+
+const StyledButton = craft(Button)({
+  base: 'px-4 py-2 rounded font-medium transition-colors',
+  dynamic: {
+    'bg-blue-500 text-white': (props) => !props.isActive,
+    'bg-green-500 text-white': (props) => props.isActive,
+    'hover:opacity-90': (props) => !props.disabled,
+    'active:scale-95': (props) => !props.disabled,
+    'disabled:opacity-50 disabled:cursor-not-allowed': (props) => props.disabled
+  },
+  responsive: {
+    sm: 'text-sm',
+    md: 'text-base',
+    lg: 'text-lg'
+  }
+});
+
+// Usage
+<StyledButton isActive={true}>Click me</StyledButton>
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+## Why Tailor?
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+Tailor was created to solve common challenges when working with Tailwind CSS in React applications:
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+1. **Type Safety**: Get full TypeScript support for your component props and styles
+2. **Organization**: Keep your component styles organized and maintainable
+3. **Reusability**: Create reusable styled components with consistent behavior
+4. **Performance**: Optimize your bundle size with smart class merging
+5. **Developer Experience**: Enjoy a great developer experience with intuitive APIs
+
+## Next Steps
+
+- Check out the [API Reference](/docs/api-reference) for detailed documentation
+- Learn about [Advanced Usage](/docs/advanced-usage) for complex components
+- Explore [Examples](/docs/examples) to see Tailor in action
+- Join our [GitHub Discussions](https://github.com/dennerrondinely/tailor/discussions) to share your ideas and get help
