@@ -8,57 +8,38 @@ Learn how to create simple and reusable components with Tailor. We'll start with
 
 ## Button Component
 
-Let's create a simple button component with different styles and sizes:
+Let's create a simple button component using Tailor helpers for interactive states and responsiveness:
 
-```typescript
-import { craft } from '@tailor/react';
+```tsx
+import { craft, embroider, tailorFit } from '@dennerrondinely/tailor';
 
-const Button = craft('button', {
-  // Base styles that apply to all buttons
-  base: 'px-4 py-2 rounded font-medium transition-colors',
-  
-  // Different button styles
-  variants: {
-    intent: {
-      primary: 'bg-blue-500 text-white hover:bg-blue-600',
-      secondary: 'bg-gray-200 text-gray-800 hover:bg-gray-300',
-      danger: 'bg-red-500 text-white hover:bg-red-600',
-    },
-    // Different button sizes
-    size: {
-      small: 'text-sm px-3 py-1',
-      medium: 'text-base px-4 py-2',
-      large: 'text-lg px-6 py-3',
-    },
-  },
-  // Default values
-  defaults: {
-    intent: 'primary',
-    size: 'medium',
-  },
+const buttonStyles = embroider({
+  base: 'rounded font-medium transition-colors',
+  hover: 'hover:bg-blue-600',
+  active: 'active:bg-blue-700',
+  focus: 'focus:ring-2 focus:ring-blue-500 focus:outline-none',
+  disabled: 'disabled:opacity-50 disabled:cursor-not-allowed',
+});
+
+const responsive = tailorFit({
+  sm: 'text-sm px-3 py-1',
+  md: 'text-base px-4 py-2',
+  lg: 'text-lg px-6 py-3',
+});
+
+const Button = craft('button')({
+  ...buttonStyles,
+  base: 'bg-blue-500 text-white',
+  responsive,
 });
 ```
 
 Usage examples:
 
 ```tsx
-// Basic usage with defaults
 <Button>Click me</Button>
-
-// Different styles
-<Button intent="primary">Primary Button</Button>
-<Button intent="secondary">Secondary Button</Button>
-<Button intent="danger">Delete</Button>
-
-// Different sizes
-<Button size="small">Small Button</Button>
-<Button size="medium">Medium Button</Button>
-<Button size="large">Large Button</Button>
-
-// Combining props
-<Button intent="primary" size="large">
-  Large Primary Button
-</Button>
+<Button disabled>Disabled</Button>
+<Button style={{ width: 200 }}>Custom width</Button>
 ```
 
 ## Card Component

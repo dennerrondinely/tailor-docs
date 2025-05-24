@@ -25,6 +25,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'api-reference',
         'advanced-usage',
+        'helper-functions',
       ],
     },
     {
