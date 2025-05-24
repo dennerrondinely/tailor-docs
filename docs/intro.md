@@ -76,5 +76,5 @@ Tailor was created to solve common challenges when working with Tailwind CSS in 
 
 - Check out the [API Reference](/docs/api-reference) for detailed documentation
 - Learn about [Advanced Usage](/docs/advanced-usage) for complex components
-- Explore [Examples](/docs/examples) to see Tailor in action
+- Explore [Examples](/docs/examples/basic-components) to see Tailor in action
 - Join our [GitHub Discussions](https://github.com/dennerrondinely/tailor/discussions) to share your ideas and get help
