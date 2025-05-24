@@ -50,11 +50,9 @@ const config: Config = {
     navbar: {
       title: 'Tailor',
       logo: {
-        alt: 'Tailor Logo',
+        alt: 'Tailor Icon',
         src: 'img/icon.png',
         srcDark: 'img/icon.png',
-        width: 32,
-        height: 32,
       },
       items: [
         {
@@ -69,6 +67,7 @@ const config: Config = {
           position: 'right',
         },
       ],
+      style: 'dark',
     },
     footer: {
       style: 'dark',
@@ -77,30 +76,13 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Getting Started',
+              label: 'Documentation',
               to: '/docs/intro',
-            },
-            {
-              label: 'API Reference',
-              to: '/docs/api-reference',
             },
           ],
         },
         {
           title: 'Community',
-          items: [
-            {
-              label: 'GitHub Issues',
-              href: 'https://github.com/dennerrondinely/tailor/issues',
-            },
-            {
-              label: 'GitHub Discussions',
-              href: 'https://github.com/dennerrondinely/tailor/discussions',
-            },
-          ],
-        },
-        {
-          title: 'More',
           items: [
             {
               label: 'GitHub',
@@ -109,13 +91,105 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Denner Rondinely. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Tailor. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: {
+        plain: {
+          color: '#E8E8E8',
+          backgroundColor: '#2A2D34',
+        },
+        styles: [
+          {
+            types: ['comment'],
+            style: {
+              color: '#6A6A6A',
+            },
+          },
+          {
+            types: ['string', 'attr-value'],
+            style: {
+              color: '#95E1D3',
+            },
+          },
+          {
+            types: ['tag', 'keyword'],
+            style: {
+              color: '#FF6B6B',
+            },
+          },
+          {
+            types: ['function', 'type'],
+            style: {
+              color: '#4ECDC4',
+            },
+          },
+          {
+            types: ['number', 'boolean'],
+            style: {
+              color: '#FFD93D',
+            },
+          },
+          {
+            types: ['punctuation', 'operator'],
+            style: {
+              color: '#AEEBFF',
+            },
+          },
+        ],
+      },
+      darkTheme: {
+        plain: {
+          color: '#E8E8E8',
+          backgroundColor: '#1E2024',
+        },
+        styles: [
+          {
+            types: ['comment'],
+            style: {
+              color: '#6A6A6A',
+            },
+          },
+          {
+            types: ['string', 'attr-value'],
+            style: {
+              color: '#95E1D3',
+            },
+          },
+          {
+            types: ['tag', 'keyword'],
+            style: {
+              color: '#FF6B6B',
+            },
+          },
+          {
+            types: ['function', 'type'],
+            style: {
+              color: '#4ECDC4',
+            },
+          },
+          {
+            types: ['number', 'boolean'],
+            style: {
+              color: '#FFD93D',
+            },
+          },
+          {
+            types: ['punctuation', 'operator'],
+            style: {
+              color: '#AEEBFF',
+            },
+          },
+        ],
+      },
+    },
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     },
   } satisfies Preset.ThemeConfig,
 };
 
 export default config;
+
