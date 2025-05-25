@@ -102,9 +102,9 @@ Example:
 ```tsx
 const StyledCard = craft(Card)({
   nested: {
-    '.card-title': 'text-xl font-bold mb-2',
-    '.card-content': 'text-gray-600',
-    '.card-footer': 'mt-4 pt-4 border-t',
+    h1: 'text-xl font-bold mb-2',
+    p: 'text-gray-600',
+    div: 'mt-4 pt-4 border-t',
   },
   // ...
 });
@@ -183,11 +183,11 @@ const StyledCard = craft(Card)({
     'hover:shadow-lg': (props) => !props.disabled,
   },
   nested: {
-    '.card-header': 'mb-4',
-    '.card-title': 'text-xl font-bold text-gray-900',
-    '.card-subtitle': 'text-sm text-gray-500 mt-1',
-    '.card-content': 'text-gray-700',
-    '.card-footer': 'mt-4 pt-4 border-t border-gray-200',
+    header: 'mb-4',
+    h1: 'text-xl font-bold text-gray-900',
+    h3: 'text-sm text-gray-500 mt-1',
+    main: 'text-gray-700',
+    footer: 'mt-4 pt-4 border-t border-gray-200',
   },
   responsive: {
     sm: 'p-4',
