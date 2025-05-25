@@ -68,54 +68,22 @@ export const commonStyles = {
 
 // Component-specific style configurations
 export const buttonStyles = {
-  base: `${commonStyles.transitions.default} ${commonStyles.borderRadius.md} font-medium ${commonStyles.states.focus}`,
-  variants: {
-    primary: `${commonStyles.colors.primary.base} ${commonStyles.colors.primary.hover} ${commonStyles.colors.primary.focus}`,
-    secondary: `${commonStyles.colors.secondary.base} ${commonStyles.colors.secondary.hover} ${commonStyles.colors.secondary.focus}`,
-    danger: `${commonStyles.colors.danger.base} ${commonStyles.colors.danger.hover} ${commonStyles.colors.danger.focus}`,
-  },
-  sizes: {
-    sm: `${commonStyles.spacing.sm} ${commonStyles.typography.sm}`,
-    md: `${commonStyles.spacing.md} ${commonStyles.typography.md}`,
-    lg: `${commonStyles.spacing.lg} ${commonStyles.typography.lg}`,
-  },
+  base: `${commonStyles.transitions.default} ${commonStyles.borderRadius.md} font-medium ${commonStyles.states.focus} ${commonStyles.colors.primary.base} ${commonStyles.colors.primary.hover} ${commonStyles.colors.primary.focus}`,
 };
 
 export const cardStyles = {
-  base: `${commonStyles.borderRadius.lg} bg-white`,
-  variants: {
-    default: commonStyles.shadows.sm,
-    bordered: 'border border-gray-200',
-    elevated: commonStyles.shadows.lg,
-  },
-  padding: {
-    none: 'p-0',
-    sm: commonStyles.spacing.sm,
-    md: commonStyles.spacing.md,
-    lg: commonStyles.spacing.lg,
-  },
+  base: `${commonStyles.borderRadius.lg} bg-white ${commonStyles.shadows.sm}`,
   nested: {
     header: 'mb-4',
-    title: `${commonStyles.typography.xl} font-bold text-gray-900`,
-    subtitle: `${commonStyles.typography.sm} text-gray-500 mt-1`,
-    content: 'text-gray-700',
+    h1: `${commonStyles.typography.xl} font-bold text-gray-900`,
+    h3: `${commonStyles.typography.sm} text-gray-500 mt-1`,
+    div: 'text-gray-700',
     footer: 'mt-4 pt-4 border-t border-gray-200',
   },
 };
 
 export const badgeStyles = {
-  base: 'inline-flex items-center font-medium',
-  variants: {
-    default: 'bg-gray-100 text-gray-800',
-    success: 'bg-green-100 text-green-800',
-    warning: 'bg-yellow-100 text-yellow-800',
-    error: 'bg-red-100 text-red-800',
-  },
-  sizes: {
-    sm: `${commonStyles.spacing.sm} ${commonStyles.typography.sm}`,
-    md: 'px-2.5 py-0.5 text-sm',
-    lg: `${commonStyles.spacing.md} ${commonStyles.typography.md}`,
-  },
+  base: 'inline-flex items-center font-medium bg-gray-100 text-gray-800',
 };
 
 // Utility function to combine class names
@@ -124,12 +92,7 @@ export const combineClasses = (...classes: (string | undefined | null | false)[]
 };
 
 // Type definitions for style configurations
-export interface StyleConfig {
-  base: string;
-  variants?: Record<string, string>;
-  sizes?: Record<string, string>;
-  nested?: Record<string, string>;
-}
+export interface StyleConfig { base: string; nested?: Record<string, string>; }
 
 // Example usage in a component:
 /*

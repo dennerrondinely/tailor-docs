@@ -46,100 +46,29 @@ Usage examples:
 
 A simple card component for displaying content:
 
-```typescript
-import { craft } from '@tailor/react';
-
-const Card = craft('div', {
-  base: 'bg-white rounded-lg shadow',
-  variants: {
-    padding: {
-      none: '',
-      small: 'p-3',
-      medium: 'p-4',
-      large: 'p-6',
-    },
-  },
-  defaults: {
-    padding: 'medium',
-  },
-});
-
-// Card parts
-const CardHeader = craft('div', {
-  base: 'border-b pb-3 mb-3',
-});
-
-const CardTitle = craft('h3', {
-  base: 'text-lg font-semibold text-gray-900',
-});
-
-const CardContent = craft('div', {
-  base: 'text-gray-600',
-});
-
-const CardFooter = craft('div', {
-  base: 'border-t pt-3 mt-3',
-});
-```
-
-Usage example:
-
 ```tsx
-<Card>
-  <CardHeader>
-    <CardTitle>Welcome to Tailor</CardTitle>
-  </CardHeader>
-  <CardContent>
+import { craft } from '@dennerrondinely/tailor';
+
+const Card = craft('div')({
+  base: 'bg-white rounded-lg shadow p-4',
+  nested: {
+    header: 'border-b pb-3 mb-3',
+    h2: 'text-lg font-semibold text-gray-900',
+    div: 'text-gray-600',
+    footer: 'border-t pt-3 mt-3',
+  },
+});
+
+// Exemplo de uso (usando "nested"):
+<Card style={{ padding: '1rem' }}> 
+  <header>
+    <h2>Welcome to Tailor</h2>
+  </header>
+  <div>
     <p>This is a simple card component created with Tailor.</p>
-  </CardContent>
-  <CardFooter>
+  </div>
+  <footer>
     <Button size="small">Learn More</Button>
-  </CardFooter>
+  </footer>
 </Card>
 ```
-
-## Badge Component
-
-A simple badge component for status indicators:
-
-```typescript
-import { craft } from '@tailor/react';
-
-const Badge = craft('span', {
-  base: 'inline-flex items-center rounded-full px-2.5 py-0.5 text-sm font-medium',
-  variants: {
-    variant: {
-      success: 'bg-green-100 text-green-800',
-      warning: 'bg-yellow-100 text-yellow-800',
-      error: 'bg-red-100 text-red-800',
-      info: 'bg-blue-100 text-blue-800',
-    },
-  },
-  defaults: {
-    variant: 'info',
-  },
-});
-```
-
-Usage examples:
-
-```tsx
-<Badge variant="success">Active</Badge>
-<Badge variant="warning">Pending</Badge>
-<Badge variant="error">Error</Badge>
-<Badge variant="info">New</Badge>
-```
-
-## Tips for Component Creation
-
-1. **Start Simple**: Begin with basic styles and add complexity as needed
-2. **Use Variants**: Group related styles into variants for better organization
-3. **Set Defaults**: Provide sensible default values for your components
-4. **Keep it Reusable**: Design components to be flexible and reusable
-
-## Next Steps
-
-- Try creating your own components using these examples
-- Explore more complex components in the advanced usage guide
-- Learn about theming and customization
-- Check out the API reference for more options 
